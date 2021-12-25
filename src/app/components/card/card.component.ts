@@ -9,7 +9,8 @@ import { CardsService } from '../../services/cards.service';
   styleUrls: ['./card.component.css'],
 })
 export class CardComponent implements OnInit {
-  panelOpenState = false;
+  panelOpenState: boolean = false;
+  accordionVisibleState: boolean = false;
   card!: Card;
 
   constructor(
@@ -27,5 +28,10 @@ export class CardComponent implements OnInit {
       }
       this.card = card.data;
     });
+  }
+
+  toggleAccordion() {
+    if (this.accordionVisibleState === false) this.accordionVisibleState = true;
+    else if (this.accordionVisibleState === true) this.accordionVisibleState = false;
   }
 }
