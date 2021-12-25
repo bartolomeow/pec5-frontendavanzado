@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Cards</h1>
+  <div class="overlay" *ngIf="!load">
+    <mat-spinner></mat-spinner>
+  </div>
+  <ul class="list-group">
+    <mat-card
+      *ngFor="let card of cards"
+      [routerLink]="['/card', card.id]"
+      class="
+        list-group-item list-group-item-action
+        animate__animated animate__bounce animate__fadeIn
+      "
+    >
+      <mat-card-header>
+        <mat-card-title>{{ card.name }}</mat-card-title>
+        <mat-card-subtitle>{{ card.id }}</mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+  </ul>
+</div>
